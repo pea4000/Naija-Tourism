@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #fdf6e3;
+    color: #2e4d2c;
+}
+ 
+ 
+ 
+/* Header and Navigation Bar */
+header {
+    background-color: #2e4d2c;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f9c74f;
+    padding: 12px;
+    text-align: center;
+ 
+    /* added for logo placement */
+    position: relative;        /* so ::before can be positioned inside */
+    min-height: 64px;          /* ensure enough height for the logo */
+}
+ 
+ 
+
+
+/* inject the logo without editing HTML */
+header::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    width: 130px;               /* adjust to your logo size */
+    height: 130px;              /* adjust to your logo size */
+    transform: translateY(-50%);
+    background-image: url("LOGO.png");  /* your file */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;  /* keeps aspect ratio */
+}
+ 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+ 
+ 
+ 
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+ 
+ 
+ 
+nav ul li a {
+    color: #f9c74f;
+    text-decoration: none;
+}
+ 
+ 
+ 
+/* Main Content */
+section {
+    padding: 20px;
+    text-align: center;
+}
+ 
+ 
+ 
+/* Footer */
+footer {
+    background-color: #2e4d2c;
+    color: #f9c74f;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+ 
