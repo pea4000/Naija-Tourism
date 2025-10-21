@@ -6,9 +6,9 @@ body {
     text-align: center;
     background-color: #fdf6e3;
     color: #2e4d2c;
+    /* added to prevent footer overlap */
+    padding-bottom: 70px; /* adjust if footer height changes */
 }
- 
- 
  
 /* Header and Navigation Bar */
 header {
@@ -23,9 +23,6 @@ header {
     min-height: 64px;          /* ensure enough height for the logo */
 }
  
- 
-
-
 /* inject the logo without editing HTML */
 header::before {
     content: "";
@@ -46,21 +43,15 @@ nav ul {
     padding: 0;
 }
  
- 
- 
 nav ul li {
     display: inline;
     margin: 10px;
 }
  
- 
- 
 nav ul li a {
     color: #f9c74f;
     text-decoration: none;
 }
- 
- 
  
 /* Main Content */
 section {
@@ -68,16 +59,23 @@ section {
     text-align: center;
 }
  
- 
- 
 /* Footer */
 footer {
     background-color: #2e4d2c;
     color: #f9c74f;
     text-align: center;
     padding: 5px;
+    width: 100%;
+ 
+    /* changed to stop covering text */
     position: fixed;
     bottom: 0;
-    width: 100%;
+    left: 0;
 }
  
+/* Ensure footer doesn’t overlap */
+@media (max-height: 600px) {
+    body {
+        padding-bottom: 90px; /* slightly more space on small screens */
+    }
+}
